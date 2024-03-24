@@ -68,7 +68,14 @@ XAMPP is a free and open-source cross-platform web server solution stack package
 7. Move Project Files: Move the project files (PHP scripts) to the `htdocs` directory inside the XAMPP installation directory. This directory is typically located at `C:\xampp\htdocs` on Windows, `/Applications/XAMPP/htdocs` on macOS, and `/opt/lampp/htdocs` on Linux.
 
 8. Access Project: Once the project files are moved to the `htdocs` directory, you can access them through your web browser by navigating to `http://localhost/project_name`, where `project_name` is the name of the directory containing your project files.
+   
+9.  Go to ```chrome://extensions```, activate developer mode, click on load unpacked and select the 'Extension' folder from our project.
+Now, you can go to any web page and click on the extension in the top right panel of your Chrome window. Click on the 'Safe of not?' button and wait for a second for the result.
 
+
+
+
+  
 ### Usage of XAMPP Server
 
 XAMPP provides a convenient way to set up a local web server environment for hosting PHP applications. It allows you to develop and test web applications locally before deploying them to a production server. With XAMPP, you can easily run PHP scripts, interact with databases using MySQL, and test web applications without the need for an internet connection.
