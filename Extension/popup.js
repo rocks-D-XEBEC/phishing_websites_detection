@@ -1,22 +1,20 @@
 function transfer() {
-	var tablink;
-	chrome.tabs.getSelected(null, function (tab) {
-		tablink = tab.url;
+	chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+		var tablink = tabs[0].url;
 		$("#p1").text("The URL being tested is - " + tablink);
 
 		var xhr = new XMLHttpRequest();
-		params = "url=" + tablink;
+		var params = "url=" + tablink;
 		var markup = "url=" + tablink + "&html=" + document.documentElement.innerHTML;
-		xhr.open("POST", "http://localhost/project/clientServer.php", false);
+		xhr.open("POST", "http://localhost/project_phish/clientServer.php", false);
 		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		xhr.send(markup);
-		
+
 		alert(xhr.responseText);
 		$("#div1").text(xhr.responseText);
 		return xhr.responseText;
 	});
 }
-
 
 $(document).ready(function () {
 	$("button").click(function () {
@@ -24,7 +22,7 @@ $(document).ready(function () {
 	});
 });
 
-chrome.tabs.getSelected(null, function (tab) {
-	var tablink = tab.url;
+chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+	var tablink = tabs[0].url;
 	$("#p1").text("The URL being tested is - " + tablink);
 });
